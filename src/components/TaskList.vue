@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-6 mt-5">
     <div class="list-group">
-      <TaskItem v-bind:item="item" v-on:click-complete="onCompleted" v-bind:tag="tag" v-for="item in items"/></TaskItem>
+      <TaskItem v-bind:item="item" v-on:click-complete="onCompleted" v-bind:tag="tag" v-for="item in items"/>
     </div>
   </div>
 </template>

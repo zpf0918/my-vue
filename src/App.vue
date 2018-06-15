@@ -10,6 +10,7 @@
 <script>
 import TaskMenu from './components/TaskMenu.vue';
 import TaskList from './components/TaskList.vue';
+import axios from 'axios';
 
 export default {
   name: 'app',
@@ -40,13 +41,26 @@ export default {
       }()
     }
   },
+  beforeCreate() {
+      axios.get('https://api.myjson.com/bins/khn66')
+      .then(response => response.data)
+      .then(data => (this.tasks = data))
+      .catch(console.log);
+  },
   methods: {
     onSelected(tag) {
       this.currentMenuTag = tag;
-      },
+    },
     onCompleted(id) {
       this.tasks[id - 1].completed = true;
-    }
+      this.save();
+    },
+    save() {
+        axios.put('https://api.myjson.com/bins/khn66', this.tasks)
+        .then(response => response.data)
+        .then(data => alert('更新成功'))
+        .catch(console.log);
+      }
   }
 }
 </script>
