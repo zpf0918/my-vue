@@ -13,16 +13,16 @@
 </template>
 
 <script>
-export default {
-  name: 'TaskItem',
-  props: {
-    item: Object,
-    tag: Boolean
-  },
-  methods: {
-  onCompleted(id) {
-    this.$emit('click-complete', id);
+  export default {
+    name: 'TaskItem',
+    props: {
+      item: Object,
+      tag: Boolean
+    },
+    methods: {
+    onCompleted(id) {
+      this.$emit('click-complete', id);
+      }
     }
   }
-}
 </script>

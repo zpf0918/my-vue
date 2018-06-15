@@ -7,21 +7,21 @@
 </template>
 
 <script>
-import TaskItem from './TaskItem.vue';
+  import TaskItem from './TaskItem.vue';
 
-export default {
-  name: 'TaskList',
-  props: {
-    items: Array,
-    tag: Boolean
-  },
-  components: {
-    TaskItem
-  },
-  methods: {
-  onCompleted(id) {
-    this.$emit('click-complete',id);
-   }
+  export default {
+    name: 'TaskList',
+    props: {
+      items: Array,
+      tag: Boolean
+    },
+    components: {
+      TaskItem
+    },
+    methods: {
+    onCompleted(id) {
+      this.$emit('click-complete',id);
+     }
+    }
   }
-}
 </script>
